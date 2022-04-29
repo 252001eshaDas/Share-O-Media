@@ -1,0 +1,21 @@
+<?php 
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+class AdminModel extends CI_Model {
+
+	public function getUserData(){
+		//$user_id = $this->session->userdata('user_id');
+
+		$this->db->select('*');
+		//$this->db->where('id',$user_id);
+		$userDataQuery = $this->db->get('users');
+
+		$userData = $userDataQuery->row_array();
+
+		return $userData;
+
+
+	}
+
+}
+?>
